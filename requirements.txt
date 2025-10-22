@@ -41,6 +41,7 @@ pandas==2.3.3
 parso==0.8.5
 pillow==11.3.0
 platformdirs==4.5.0
+plotly==6.3.1
 prompt_toolkit==3.0.52
 protobuf==6.33.0
 psutil==7.1.0
