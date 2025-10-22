@@ -90,10 +90,7 @@ count_prevyr = len(data1[(data1["hrmonth"]==(prevyrmo)) & (data1["hryear4"]==(pr
 st.set_page_config(layout="wide")
 st.title('CPS Data Validation Dashboard')
 st.subheader('Record counts of the current period compared to previous month and previous year')
-st.write("The Current Population Survey, a monthly survey of about 60,000 households that the Census Bureau conducts for BLS, 
-provides a comprehensive body of information on the employment and unemployment experience of the nation’s population, classified 
-by age, gender, race, ethnicity, education, and a variety of other characteristics. The CPS is the source of data for the national 
-unemployment rate and employment by occupation. Click the buttons to the left for frequency counts of a variable")
+st.write("The Current Population Survey, a monthly survey of about 60,000 households that the Census Bureau conducts for BLS, provides a comprehensive body of information on the employment and unemployment experience of the nation’s population, classified by age, gender, race, ethnicity, education, and a variety of other characteristics. The CPS is the source of data for the national unemployment rate and employment by occupation. Click the buttons to the left for frequency counts of a variable")
 col1, col2, col3 = st.columns(3)
 with col1:
   st.write(f":blue[Number of records in current period {count_current}]")
@@ -865,4 +862,3 @@ elif choice == "pemlr: Labor Force Recode":
 # ax3.get_yaxis().set_visible(False)
 # plt.show()
 
-#!streamlit run CPS_M_Validationv3.py --browser.serverAddress='localhost' --browser.gatherUsageStats=false
