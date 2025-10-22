@@ -52,28 +52,13 @@ import plotly as plt
 import altair as alt
 #import plotly.figure_factory as ff
 
-#http://146.142.206.44:8502
-
 
 #Establish file location  (fill this out)
-#file_path = '/wbRstudio_shared/noelr/.cpsdataval'
+file_path = '/mount/src/Projects/'
 
-#A methond to load multiple csv at once, and lower cased the variables names
-#!!The column names from one year to the next were capitalized. didnt matter in SAS, but python is case sensistive		
-# cps_files = ["jan23pub.csv", "feb23pub.csv", "mar23pub.csv", "apr23pub.csv", "may23pub.csv", "jun23pub.csv", 
-#              "jul23pub.csv", "aug23pub.csv", "sep23pub.csv", "oct23pub.csv", "nov23pub.csv", "dec23pub.csv",
-#              "jan24pub.csv", "feb24pub.csv", "mar24pub.csv", "apr24pub.csv", "may24pub.csv", "jun24pub.csv", 
-#              "jul24pub.csv", "aug24pub.csv", "sep24pub.csv", "oct24pub.csv", "nov24pub.csv", "dec24pub.csv"]
+cps_file = "cpsjan24.csv"
 
-cps_files = ["jan23pub.csv", "dec23pub.csv", "jan24pub.csv"]
-
-
-def load_files(filenames):
-   for filename in filenames:
-      yield pd.read_csv(filename).rename(columns=str.lower)
-
-#Compilling all the monthly datasets into one file
-data = pd.concat(load_files(cps_files)) 
+data = pd.read_csv(file_path+cps_file).rename(columns=str.lower)
 
 #Defining what months will be used (fill this out)
 current   = 'jan24'
@@ -90,12 +75,6 @@ datavar_list = ["hrhhid2", "hrmonth", "hryear4", "hefaminc", "hwhhwgt", "prunedu
                 "pwcmpwgt", "peio1icd", "prwkstat", "prdthsp", "prpthrs", "peio1cow", "prdasian", 
                 "prabsrea", "peeduca", "prsjmj", "perrp", "hrmis", "pepar1typ", "pepar2typ",
                 "prtage", "pesex", "ptdtrace", "pepar1", "pepar2", "pemlr"]
-
- 
-# Define a module/function to loop through and read in the CPS read in SAS datasets    
-#def load_files(filenames):
-#	for filename in filenames:
-#		yield pd.read_sas(file_path+filename, format='sas7bdat', encoding='utf-8')
 
 #Truncate data to only columns neeeded, located in datavar_list
 data1 = data[datavar_list]    
