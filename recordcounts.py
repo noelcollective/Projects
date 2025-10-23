@@ -54,7 +54,7 @@ import altair as alt
 
 
 #Establish file location  (fill this out)
-file_path = '/mount/src/Projects/'
+file_path = '/mount/src/projects/'
 
 cps_file = "cpsjan24.csv"
 
